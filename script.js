@@ -22,6 +22,8 @@ function generatepassword(Length, includeUppercase, includeLowercase, includeNum
     if(includeSymbols){
         allowedchars+=symbols;
     }
+    if(includeUppercase == false && includeLowercase == false && includeNumbers == false && includeSymbols == false){
+        return "Please select atleast one option";}
 
     for(let i=0; i<Length; i++){
         let random= Math.floor(Math.random()*allowedchars.length);
