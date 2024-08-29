@@ -1,0 +1,76 @@
+form{
+    text-align: start;
+    margin-left: 33%;
+    padding: 20px;
+}
+h1{
+    color: red;
+    font-size: 50px;
+    text-align: center;
+}
+.boxes{
+    font-size: 25px;
+    display:inline-block;
+    text-align: start;
+
+}
+#click{
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 15px;
+    }
+input {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+     }
+label{
+        cursor: pointer;
+        font-size: 23px;
+    
+     }
+#main{
+ background-color: lightblue;
+    text-align: center;
+    max-height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 10px 10px 8px #916666;
+    padding: 20px;}
+
+#text_start{
+    text-align: start;
+}
+.abhi{
+    margin-top: 20px;
+}
+#password{
+    border: 3px solid black;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25%;
+    font-size: 20px;
+    font-weight: bolder;
+}
+@media (max-width: 800px) {
+ form{
+        margin-left: 0%;
+    }
+    #password {
+        border: 2px solid black; 
+        padding: 8px; 
+        font-size: 18px; 
+        border-radius: 20%; 
+    }
+}
+
+@media (min-width: 800px) {
+    .abhi {
+        margin-top: 10px; 
+    }
+    #password {
+        border: 2px solid black;
+        padding: 8px; 
+        font-size: 18px; 
+        border-radius: 20%; 
+    }}
