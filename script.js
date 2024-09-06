@@ -45,14 +45,22 @@ upp.addEventListener("change", function() {
 
     if (upp.checked) {
         includeUppercase=true;
-    }});
+    }
+    else{
+        includeUppercase=false;
+    }
+});
 let includeLowercase = false;
 low.addEventListener("change", function() {
 
 
     if (low.checked) {
         includeLowercase =true;
-    }});
+    }
+    else{
+        includeLowercase=false;
+    }
+});
 
 let includeNumbers = false;
 num.addEventListener("change", function() {
@@ -60,14 +68,22 @@ num.addEventListener("change", function() {
 
     if (num.checked) {
         includeNumbers=true;
-    }});
+    }
+    else{
+        includeNumbers=false;
+    }
+});
     let includeSymbols = false;
     sym.addEventListener("change", function() {
 
 
         if (sym.checked) {
             includeSymbols=true;
-        }});
+        }
+        else{
+            includeSymbols=false;
+        }
+    });
 
 let final;
 
