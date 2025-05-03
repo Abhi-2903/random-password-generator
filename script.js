@@ -1,107 +1,101 @@
-let generate=document.getElementById("click");
-let result=document.getElementById("password");
-let upp=document.getElementById("upp");
-let sym=document.getElementById("sym");
-function generatepassword(Length, includeUppercase, includeLowercase, includeNumbers, includeSymbols){
-    let lowercase="abcdefghijklmnopqrstuvwxyz";
-    let uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let numbers="0123456789";   
-    let symbols="!@#$%&_";
-
-    let allowedchars="";
-    let password="";
-    if(includeUppercase){
-        allowedchars+=uppercase;
-    }
-    if(includeLowercase){
-        allowedchars+=lowercase;
-    }
-    if(includeNumbers){
-        allowedchars+=numbers;
-    }
-    if(includeSymbols){
-        allowedchars+=symbols;
-    }
-    if(includeUppercase == false && includeLowercase == false && includeNumbers == false && includeSymbols == false){
-        return "Please select atleast one option";}
-
-    for(let i=0; i<Length; i++){
-        let random= Math.floor(Math.random()*allowedchars.length);
-        password+= allowedchars[random];
-    
-    }
-    return password;
+body {
+    background: linear-gradient(135deg, #83a4d4, #b6fbff);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
 }
-let passwordLength=prompt(`Enter the length of the password`);
-passwordLength=parseInt(passwordLength);
-    while(isNaN(passwordLength)){
-        passwordLength=prompt(`Enter the length of the password`);
-        passwordLength=parseInt(passwordLength);
+
+#main {
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+form {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#password {
+    padding: 15px 25px;
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    min-width: 250px;
+    word-break: break-all;
+}
+
+#copyBtn {
+    padding: 12px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#copyBtn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+button#click {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button#click:hover {
+    background: #0069d9;
+    transform: translateY(-2px);
+}
+
+label {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    justify-content: center;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+@media (max-width: 650px) {
+    #main {
+        margin: 10px;
+        padding: 20px;
     }
-
-let includeUppercase= false;
-upp.addEventListener("change", function() {
-
-
-    if (upp.checked) {
-        includeUppercase=true;
+    
+    h1 {
+        font-size: 1.8rem;
     }
-    else{
-        includeUppercase=false;
+    
+    #password {
+        font-size: 1rem;
+        min-width: 200px;
     }
-});
-let includeLowercase = false;
-low.addEventListener("change", function() {
-
-
-    if (low.checked) {
-        includeLowercase =true;
-    }
-    else{
-        includeLowercase=false;
-    }
-});
-
-let includeNumbers = false;
-num.addEventListener("change", function() {
-
-
-    if (num.checked) {
-        includeNumbers=true;
-    }
-    else{
-        includeNumbers=false;
-    }
-});
-    let includeSymbols = false;
-    sym.addEventListener("change", function() {
-
-
-        if (sym.checked) {
-            includeSymbols=true;
-        }
-        else{
-            includeSymbols=false;
-        }
-    });
-let copyBtn = document.getElementById("copyBtn");
-let copyMsg = document.getElementById("copyMsg");
-
-copyBtn.onclick = function () {
-    let text = result.textContent;
-    if (text && text !== "Please select atleast one option") {
-        navigator.clipboard.writeText(text).then(() => {
-            copyMsg.style.display = "inline";
-            setTimeout(() => {
-                copyMsg.style.display = "none";
-            }, 1500);
-        });
-    }
-};
-
-let final;
-
-generate.onclick=function(){
-    final= generatepassword(passwordLength, includeUppercase, includeLowercase, includeNumbers, includeSymbols);
-    result.textContent=final;
 }
