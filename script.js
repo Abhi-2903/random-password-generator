@@ -84,6 +84,20 @@ num.addEventListener("change", function() {
             includeSymbols=false;
         }
     });
+let copyBtn = document.getElementById("copyBtn");
+let copyMsg = document.getElementById("copyMsg");
+
+copyBtn.onclick = function () {
+    let text = result.textContent;
+    if (text && text !== "Please select atleast one option") {
+        navigator.clipboard.writeText(text).then(() => {
+            copyMsg.style.display = "inline";
+            setTimeout(() => {
+                copyMsg.style.display = "none";
+            }, 1500);
+        });
+    }
+};
 
 let final;
 
