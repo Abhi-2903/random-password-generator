@@ -87,3 +87,42 @@ label {
         margin-top: 15px;
     }
 }
+.password-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#copyBtn {
+    padding: 8px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#copyBtn:hover {
+    background-color: #cc0000;
+}
+
+/* Keep existing CSS and just add these new rules */
+#password {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 20px;
+}
+
+@media (max-width: 800px) {
+    .password-container {
+        flex-direction: column;
+    }
+    
+    #copyBtn {
+        margin-top: 10px;
+    }
+}
